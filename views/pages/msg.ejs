@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body class="container">
+        <header>
+            <%- include('../partials/header', {username:username}); %>
+        </header>
+
+        <main>
+            <div class="offset-3 col-6 ">
+                <div class="alert alert-danger m-5">
+                    <%= message %>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+
+</html>

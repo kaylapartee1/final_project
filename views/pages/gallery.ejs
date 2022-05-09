@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body >
+        <header>
+            <%- include('../partials/header', {username:username}); %>
+        </header>
+        <main class="container ml-1">
+            <h3>this is a sample page of top 100 rated players</h3>
+            <div class="row">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <%if (players){  %>
+                        <% let headers = Object.keys(players[0]);%>
+                        <% headers.forEach((h)=>{ %>
+                            <th scope="col"><%= h %></th>
+                        <%})%>
+                    <% }%>
+                </tr>
+                </thead>
+                <tbody>
+                    <%if (players){  %>
+                        <% players.forEach((v,i)=>{ %>
+                            <tr>
+                            <% let keys = Object.keys(v);keys.forEach((k,j)=> { %>
+                                <%- "<td>" + v[k] + "</td>" %>
+                            <%})%>
+                            </tr>
+                        <%})%>
+                    <% }%>
+                </tbody>
+            </table>
+            </div>
+        </main>
+    </body>
+    <footer>
+            <%- include('../partials/footer'); %>
+    </footer>
+</html>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head'); %>
+    </head>
+    <body class="container">
+        <header>
+            <%- include('../partials/header', {username:username}); %>
+        </header> 
+        
+        <main>
+
+            <div class="navbar">
+
+               <%  var sections = sections || ['home'] %>
+
+               <% sections.forEach(function(sec){ %>
+
+                   <div><a href="/<%= sec %>"><%= sec %></div>
+
+               <% }); %>
+
+            </div>
+            <h3> Welcome <%= username %></h3>
+            <p> This is your profile page</p>
+        </main>
+            <h3> Select Options Below to Explore the Site!</h3>
+
+        <footer>
+            <%- include('../partials/footer'); %>
+        </footer>
+    </body>
+
+</html>

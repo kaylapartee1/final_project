@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+    <a class="navbar-brand" href="/">CIS329 is Fun!</a>
+    <ul class="navbar-nav  ">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+            <% if(username){%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/u/profile">Profile</a>
+                </li>
+            <%} %>  
+        <li class="nav-item">
+           <% if(username){%>
+                <a class="nav-link" href="/auth/logout">Logout</a>
+           <%}else{%>
+                <a class="nav-link" href="/auth/login">Login</a>
+           <%} %>
+        </li>
+        <li class="nav-item">
+           <% if(username){%>
+                <span></span>
+           <%}else{%>
+                <a class="nav-link" href="/auth/reg">Register</a>
+           <%} %>
+        </li>
+    </ul>
+      </div>
+</nav>
